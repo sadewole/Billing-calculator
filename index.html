@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+
+<body>
+  <div class="">
+    <header>Billing Calculator</header>
+
+    <div class="contain">
+      <div class="main-left col-md-6 col-sm-12">
+        <form class="form">
+          <div class="form-group">
+            <label for="">Enter bill amount:$</label>
+            <input type="text" class="form-control" id="bill">
+          </div>
+          <div class="form-group">
+            <label>Tip percentage: <cite><small>change the percentage slider to get the percentage bill</small></cite> </label>
+            <input type="range" class="form-control" id="slider" min="0" max="100" value="0" step="1">
+            <span id="sliderValue">0%</span>
+          </div>
+        </form>
+      </div>
+      <div class="main-right col-md-6 col-sm-12">
+        <p><strong>Your percentage bill = <span id="billPercent"></span> </strong></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    let slider = document.getElementById('slider');
+
+    slider.addEventListener('change', () => {
+      let sliders = document.getElementById('slider');
+      let bill = document.getElementById('bill').value;
+      let sliderValue = document.getElementById('sliderValue');
+      let billPercent = document.getElementById('billPercent');
+
+
+      let percent = sliders.value * 0.01;
+      billPercent.innerHTML = '$' + (bill * percent).toFixed(2)
+      sliderValue.innerHTML = sliders.value + '%';
+    })
+  </script>
+</body>
+
+</html>

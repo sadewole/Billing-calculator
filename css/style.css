@@ -1,0 +1,23 @@
+header{
+  background: #000;
+  color: #fff;
+  padding: 10px;
+}
+.contain{
+  width: 70%;
+  margin: 50px auto;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background: rgb(24, 66, 130);
+  color: #fff;
+}
+.main-left{
+  float: left;
+}
+.main-right{
+  float: right;
+}
+.clr{
+  clear: both;
+}
